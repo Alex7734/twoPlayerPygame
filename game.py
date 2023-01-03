@@ -2,6 +2,15 @@ import pygame
 import pygame.freetype
 import random
 
+def get_initX():
+    return random.randint(50, 350)
+
+def get_initY():
+    return random.randint(20, 80)
+
+def get_direction():
+    return pygame.Vector2(0, 1),
+
 pygame.init()
 FONT = pygame.freetype.SysFont(None, 32)
 
@@ -51,6 +60,7 @@ class Game(pygame.sprite.Sprite):
         if (self.player.rect.center - self.target).length() <= 20:
             self.score += 1
             self.target = pygame.Vector2(random.randint(100, 300), random.randint(100, 500))
+
 
 def main():
     screen = pygame.display.set_mode((800, 600))
